@@ -62,7 +62,7 @@ function App() {
     <div className="app-bg app-text app-font min-height flex-col">
       {/* navigation */}
       <nav className="navbar">
-        <h1 className="navbar-title">AWS Builders Club</h1>
+        <h1 className="navbar-title">AWS Builders Club (Logo)</h1>
         <ul className="navbar-links">
           <li>
             <a href="#home" className="navbar-link" onClick={handleAboutClick2}>
