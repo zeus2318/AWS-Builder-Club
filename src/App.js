@@ -102,7 +102,7 @@ function App() {
           >
             Join Our Discord
           </a>
-          <a href="/archive" className="hero-btn hero-btn-orange">
+          <a href="/archive" className="hero-btn hero-btn-orange" onClick={handleProjectsClick}>
             Projects
           </a>
         </div>

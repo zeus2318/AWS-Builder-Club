@@ -383,12 +383,26 @@ html {
   padding: 2rem;
   border-radius: 16px;
   box-shadow: var(--shadow-heavy);
-  min-width: 500px;
-  max-width: 90vw;
+  min-width: 320px;
+  max-width: 95vw;
   max-height: 80vh;
   overflow-y: auto;
   position: relative;
   animation: slideInUp 0.3s ease-out;
+}
+
+@media (max-width: 600px) {
+  .modal-content {
+    padding: 1rem;
+    min-width: 0;
+    max-width: 98vw;
+    max-height: 90vh;
+  }
+  .modal-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
 }
 
 .modal-header {
