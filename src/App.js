@@ -6,7 +6,123 @@ function App() {
   const homeRef = useRef(null);
 
   const [showModal, setShowModal] = React.useState(false);
-  const [showAboutModal, setShowAboutModal] = React.useState(false); // NEW
+  const [showAboutModal, setShowAboutModal] = React.useState(false);
+  const [showTeamModal, setShowTeamModal] = React.useState(false);
+
+  // Team navigation state
+  const teamSections = [
+    {
+      key: 'lead',
+      label: 'Project Lead',
+      content: {
+        title: 'Project Lead',
+        leader: 'Ijed Luzele J. Yañez',
+        leaderRole: 'AWS Builders Club, Project Lead ',
+        members: [
+          { name: 'Placeholder', role: 'Placeholder' },
+          { name: 'Placeholder', role: 'Placeholder' },
+          { name: 'Placeholder', role: 'Placeholder' },
+          { name: 'Placeholder', role: 'Placeholder' }
+        ]
+      }
+    },
+    {
+      key: 'leaders',
+      label: 'Leaders',
+      content: {
+        title: 'Leaders',
+        leaders: [
+          { name: 'Josh Marco C. Goc-Ong', role: 'AWS Builder Club, Website Manager' },
+          { name: 'James Nathaniel F. Tan', role: 'AWS Builder Club, Discord Community Manager' }
+        ],
+        members: [
+          { name: 'Placeholder', role: 'Placeholder' },
+          { name: 'Placeholder', role: 'Placeholder' }
+        ]
+      }
+    },
+    {
+      key: 'cdt',
+      label: 'Content and Design Team',
+      content: {
+        title: 'Content and Design Team',
+        leader: 'Elykah A. Cascaro',
+        leaderRole: 'AWS Builder Club, Lead Content Writer',
+        members: [
+          { name: 'Trixie Nin D. Canete', role: 'Graphic Designer' },
+          { name: 'Zidane M. Pasaje', role: 'Flex Assistant' }
+        ]
+      }
+    },
+    {
+      key: 'fet',
+      label: 'Front-End Team',
+      content: {
+        title: 'Front-End Team',
+        leader: 'Joshua Marc N. Masellones',
+        leaderRole: 'AWS Builder Club, Lead Front-End Developer',
+        members: [
+          { name: 'Lance Rannielle J. Andres', role: 'Developer' },
+          { name: 'Abe Jaylil M. Javier', role: 'Developer' },
+          { name: 'Chass Clayton C. Estomo', role: 'Developer' }
+        ]
+      }
+    },
+    {
+      key: 'act',
+      label: 'AWS Cloud Team',
+      content: {
+        title: 'AWS Cloud Team',
+        leader: 'Karylle Grace K. Bontuyan',
+        leaderRole: 'AWS Builder Club, Lead Solutions Architect',
+        members: [
+          { name: 'Arabella L. Ortega', role: 'AWS Developer' }
+        ]
+      }
+    },
+    {
+      key: 'mt',
+      label: 'Moderation Team',
+      content: {
+        title: 'Moderation Team',
+        leader: 'Renzi S. Albastro',
+        leaderRole: 'AWS Builders Club, Lead Moderator',
+        members: [
+          { name: 'Gerald Andre C. Nagliba', role: 'Moderator' },
+          { name: 'Kurt Arnyle C. Gadingan', role: 'Moderator' }
+        ]
+      }
+    },
+    {
+      key: 'eet',
+      label: 'Event & Engagement Team',
+      content: {
+        title: 'Event & Engagement Team',
+        leader: 'Shanica B. Diaz',
+        leaderRole: 'AWS Builders Club, Event Organizer',
+        members: [
+          { name: 'Beau Renfro A. Crieta', role: 'Event Organizer' },
+          { name: 'Desiree Joy D. Bigot', role: 'Content/Resource Center' },
+          { name: 'Jamril Maclain J. Parreño', role: 'Content/Resource Center' }
+        ]
+      }
+    },
+    {
+      key: 'qat',
+      label: 'Quality Assurance Team',
+      content: {
+        title: 'Quality Assurance Team',
+        leader: 'Hezron A. Nallos',
+        leaderRole: 'AWS Builders Club, QA Lead',
+        members: [
+          { name: 'James Virgil S. Co', role: 'QA Tester' },
+          { name: 'John Bernard D. Mendoza', role: 'QA Tester' }
+        ]
+      }
+    }
+  ];
+
+  const [activeTeamSection, setActiveTeamSection] = React.useState('lead');
 
   const githubRepos = [
     { 
@@ -58,12 +174,12 @@ function App() {
   };
 
   const closeModal = () => setShowModal(false);
-  const openAboutModal = () => setShowAboutModal(true); // NEW
-  const closeAboutModal = () => setShowAboutModal(false); // NEW
+  const openAboutModal = () => setShowAboutModal(true);
+  const closeAboutModal = () => setShowAboutModal(false);
 
   return (
     <div className="app-bg app-text app-font min-height flex-col">
-      {/* navigation */}
+      {/* Main Navigation */}
       <nav className="navbar">
         <img
           src={require("./images/aws-builder-logo.png")}
@@ -91,6 +207,40 @@ function App() {
             <a href="#goals" className="navbar-link">
               Goals
             </a>
+          </li>
+          {/* dropdown */}
+          <li className="navbar-dropdown-parent">
+            <button
+              className="navbar-link navbar-dropdown-toggle"
+              onClick={e => {
+                e.preventDefault();
+                document.getElementById('dropdown-getstarted-main').classList.toggle('show');
+              }}
+              aria-haspopup="true"
+              aria-expanded={document.getElementById('dropdown-getstarted-main')?.classList.contains('show')}
+            >
+              Get Started Today ▼
+            </button>
+            <div
+              id="dropdown-getstarted-main"
+              className="navbar-dropdown"
+              onMouseLeave={() => document.getElementById('dropdown-getstarted-main').classList.remove('show')}
+            >
+              <a
+                href="#teams"
+                className="navbar-dropdown-link"
+                onClick={e => {
+                  e.preventDefault();
+                  setShowTeamModal(true);
+                  document.getElementById('dropdown-getstarted-main').classList.remove('show');
+                }}
+              >
+                Meet the team
+              </a>
+              <a href="#events" className="navbar-dropdown-link">Events</a>
+              <a href="#benefits" className="navbar-dropdown-link">Benefits</a>
+              <a href="#faq" className="navbar-dropdown-link">FAQ</a>
+            </div>
           </li>
         </ul>
       </nav>
@@ -304,6 +454,99 @@ function App() {
                   </div>
                 </div>
               ))}
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Meet the Team Modal */}
+      {showTeamModal && (
+        <div className="modal-overlay" onClick={() => setShowTeamModal(false)}>
+          <div className="modal-content" style={{ maxWidth: '900px', width: '100%' }} onClick={e => e.stopPropagation()}>
+            <div className="modal-header">
+              <h2 className="modal-title">Meet the Team</h2>
+              <button className="modal-close" onClick={() => setShowTeamModal(false)}>×</button>
+            </div>
+            <div style={{ display: 'flex', gap: '32px', padding: '32px 0' }}>
+              {/* Sidebar Navigation */}
+              <div style={{
+                background: 'var(--primary-blue)',
+                borderRadius: '16px',
+                padding: '24px 0',
+                minWidth: '320px',
+                color: '#fff',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '8px'
+              }}>
+                {teamSections.map(section => (
+                  <button
+                    key={section.key}
+                    style={{
+                      background: activeTeamSection === section.key ? '#0498eeff' : 'none',
+                      color: activeTeamSection === section.key ? '#fff' : '#fff',
+                      border: 'none',
+                      borderRadius: '8px',
+                      padding: '12px 24px',
+                      fontWeight: activeTeamSection === section.key ? 'bold' : 'normal',
+                      margin: '0 24px 4px 24px',
+                      cursor: 'pointer',
+                      textAlign: 'left',
+                      opacity: activeTeamSection === section.key ? 1 : 0.85,
+                      transition: 'background 0.2s'
+                    }}
+                    onClick={() => setActiveTeamSection(section.key)}
+                  >
+                    {section.label}
+                  </button>
+                ))}
+              </div>
+              {/* Main Content */}
+              <div style={{ flex: 1 }}>
+                <h2 style={{ color: 'var(--primary-blue)', marginBottom: '8px' }}>
+                  {teamSections.find(s => s.key === activeTeamSection).content.title}
+                </h2>
+                {/* Show multiple leaders for 'leaders' section */}
+                {activeTeamSection === 'leaders'
+                  ? teamSections.find(s => s.key === activeTeamSection).content.leaders.map((leader, idx) => (
+                      <div key={idx} style={{ fontWeight: 'bold', color: '#e53935', marginBottom: '8px' }}>
+                        {leader.name}
+                        <div style={{ marginBottom: '16px', fontWeight: 'normal', color: '#222' }}>
+                          • {leader.role}
+                        </div>
+                      </div>
+                    ))
+                  : (
+                    <>
+                      <div style={{ fontWeight: 'bold', color: '#e53935', marginBottom: '8px' }}>
+                        {teamSections.find(s => s.key === activeTeamSection).content.leader}
+                      </div>
+                      <div style={{ marginBottom: '16px' }}>
+                        • {teamSections.find(s => s.key === activeTeamSection).content.leaderRole}
+                      </div>
+                    </>
+                  )
+                }
+                {/* showing members */}
+                {activeTeamSection !== 'lead' && activeTeamSection !=='leaders' &&
+                  teamSections.find(s => s.key === activeTeamSection).content.members.length > 0 && (
+                    <>
+                      <div style={{ fontWeight: 'bold', marginBottom: '8px' }}>MEMBERS</div>
+                      <ul style={{ marginBottom: '24px', paddingLeft: '20px' }}>
+                        {teamSections.find(s => s.key === activeTeamSection).content.members.map((member, idx) => (
+                          <li key={idx}>
+                            {member.name}
+                            <span style={{ color: '#888', fontStyle: 'italic', marginLeft: '8px' }}>
+                              {member.role}
+                            </span>
+                          </li>
+                        ))}
+                      </ul>
+                    </>
+                  )
+                }
+                <hr style={{ margin: '24px 0', border: 'none', borderTop: '1px solid #ccc' }} />
+              </div>
             </div>
           </div>
         </div>
