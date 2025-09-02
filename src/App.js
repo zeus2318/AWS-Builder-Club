@@ -8,6 +8,8 @@ function App() {
   const [showModal, setShowModal] = React.useState(false);
   const [showAboutModal, setShowAboutModal] = React.useState(false);
   const [showTeamModal, setShowTeamModal] = React.useState(false);
+  const [showEventsModal, setShowEventsModal] = React.useState(false);
+  const [showFAQModal, setShowFAQModal] = React.useState(false);
 
   // Team navigation state
   const teamSections = [
@@ -237,9 +239,28 @@ function App() {
               >
                 Meet the team
               </a>
-              <a href="#events" className="navbar-dropdown-link">Events</a>
-              <a href="#benefits" className="navbar-dropdown-link">Benefits</a>
-              <a href="#faq" className="navbar-dropdown-link">FAQ</a>
+              <a
+                href="#events"
+                className="navbar-dropdown-link"
+                onClick={e => {
+                  e.preventDefault();
+                  setShowEventsModal(true);
+                  document.getElementById('dropdown-getstarted-main').classList.remove('show');
+                }}
+              >
+                Events
+              </a>
+              <a
+                href="#faq"
+                className="navbar-dropdown-link"
+                onClick={e => {
+                  e.preventDefault();
+                  setShowFAQModal(true);
+                  document.getElementById('dropdown-getstarted-main').classList.remove('show');
+                }}
+              >
+                FAQ
+              </a>
             </div>
           </li>
         </ul>
@@ -304,7 +325,7 @@ function App() {
                   Vision
                 </h3>
                 <p className="highlight-card-desc">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam euismod, urna eu tincidunt consectetur, nisi nisl aliquam eros, nec dictum sem urna at sapien. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+                  To build a strong presence in the Mapúa MCM community by showcasing our AWS projects and inspiring students to explore the power of cloud technologies.
                 </p>
               </div>
               <div>
@@ -312,7 +333,7 @@ function App() {
                   Mission
                 </h3>
                 <p className="highlight-card-desc">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam euismod, urna eu tincidunt consectetur, nisi nisl aliquam eros, nec dictum sem urna at sapien. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+                  To create a community of innovative, skilled students who are empowered to harness AWS projects and inspire students to explore the power of the cloud.
                 </p>
               </div>
             </div>
@@ -547,6 +568,61 @@ function App() {
                 }
                 <hr style={{ margin: '24px 0', border: 'none', borderTop: '1px solid #ccc' }} />
               </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Events */}
+      {showEventsModal && (
+        <div className="modal-overlay" onClick={() => setShowEventsModal(false)}>
+          <div className="modal-content" style={{ maxWidth: '600px', width: '100%' }} onClick={e => e.stopPropagation()}>
+            <div className="modal-header">
+              <h2 className="modal-title">Events</h2>
+              <button className="modal-close" onClick={() => setShowEventsModal(false)}>×</button>
+            </div>
+            <div style={{ padding: '24px 0' }}>
+              <div style={{ marginBottom: '24px' }}>
+                <h3 style={{ marginBottom: '8px', color: 'var(--primary-blue)' }}>AWS Study Jam</h3>
+                <div style={{ fontStyle: 'italic', color: '#888', marginBottom: '4px' }}>Group Study Session</div>
+                <p>
+                  Join our collaborative AWS Study Jan group study session to learn and review AWS concepts together. Perfect for beginners and those preparing for certifications!
+                </p>
+              </div>
+              <div style={{ marginBottom: '24px' }}>
+                <h3 style={{ marginBottom: '8px', color: 'var(--primary-blue)' }}>Launchpad Workshops</h3>
+                <div style={{ fontStyle: 'italic', color: '#888', marginBottom: '4px' }}>Workshop</div>
+                <p>
+                  Hands-on workshops designed to help you build real-world AWS skills. Participate in guided labs and interactive sessions led by experienced mentors.
+                </p>
+              </div>
+              <div>
+                <h3 style={{ marginBottom: '8px', color: 'var(--primary-blue)' }}>Cloud Career Compass</h3>
+                <div style={{ fontStyle: 'italic', color: '#888', marginBottom: '4px' }}>Career Talks</div>
+                <p>
+                  Discover career opportunities in cloud computing! Hear from industry professionals and alumni about their journeys and get tips for launching your own cloud career.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* FAQ Modal */}
+      {showFAQModal && (
+        <div className="modal-overlay" onClick={() => setShowFAQModal(false)}>
+          <div className="modal-content" style={{ maxWidth: '500px', width: '100%' }} onClick={e => e.stopPropagation()}>
+            <div className="modal-header">
+              <h2 className="modal-title">FAQ</h2>
+              <button className="modal-close" onClick={() => setShowFAQModal(false)}>×</button>
+            </div>
+            <div style={{ padding: '24px 0' }}>
+              <ul style={{ paddingLeft: '20px', fontSize: '1.1rem' }}>
+                <li>1. Placeholder</li>
+                <li>2. Placeholder</li>
+                <li>3. Placeholder</li>
+                <li>4. Placeholder</li>
+              </ul>
             </div>
           </div>
         </div>
