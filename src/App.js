@@ -6,6 +6,7 @@ function App() {
   const homeRef = useRef(null);
 
   const [showModal, setShowModal] = React.useState(false);
+  const [showAboutModal, setShowAboutModal] = React.useState(false); // NEW
 
   const githubRepos = [
     { 
@@ -57,12 +58,19 @@ function App() {
   };
 
   const closeModal = () => setShowModal(false);
+  const openAboutModal = () => setShowAboutModal(true); // NEW
+  const closeAboutModal = () => setShowAboutModal(false); // NEW
 
   return (
     <div className="app-bg app-text app-font min-height flex-col">
       {/* navigation */}
       <nav className="navbar">
-        <h1 className="navbar-title">AWS Builders Club (Logo)</h1>
+        <img
+          src={require("./images/aws-builder-logo.png")}
+          alt="AWS Builders Club Logo"
+          className="navbar-logo"
+          style={{ height: '48px' }}
+        />
         <ul className="navbar-links">
           <li>
             <a href="#home" className="navbar-link" onClick={handleAboutClick2}>
@@ -91,7 +99,7 @@ function App() {
       <section id="home" className="hero-section" ref={homeRef}>
         <h2 className="hero-title">Welcome to AWS Builders Club</h2>
         <p className="hero-desc">
-          Lorem ipsum dolor sit amet. Et galisum vero est esse corrupti non quod natus.
+          Be part of a dynamic community at Mapúa MCM where students learn, collaborate, and innovate with AWS. Gain hands-on experience, build real projects, and jumpstart your cloud career with peers who share the same passion.
         </p>
         <div className="hero-buttons">
           <a
@@ -100,7 +108,7 @@ function App() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Join Our Discord
+            Join the Cloud Revolution
           </a>
           <a href="/archive" className="hero-btn hero-btn-orange" onClick={handleProjectsClick}>
             Projects
@@ -113,25 +121,54 @@ function App() {
         <h2 className="hero-title" style={{ marginBottom: '32px' }}>
           About Us
         </h2>
-        <div className="about-content" style={{ maxWidth: '800px', margin: '0 auto' }}>
-          <div className="about-block" style={{ marginBottom: '48px' }}>
-            <h3 className="highlights-title" style={{ marginBottom: '16px' }}>
-              Vision
-            </h3>
+        <div className="about-content" style={{ maxWidth: '800px', margin: '0 auto', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+          <div className="highlight-card" style={{ flex: 1, marginRight: '32px' }}>
+            <h4 className="highlight-card-title blue">About the Club</h4>
             <p className="highlight-card-desc">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam euismod, urna eu tincidunt consectetur, nisi nisl aliquam eros, nec dictum sem urna at sapien. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+              The AWS Builders Club at Mapúa MCM is a community of learners passionate about cloud technology, collaboration, and innovation. Open to all students, the club provides opportunities for hands-on learning, peer support, and career growth through projects, training, and knowledge-sharing events.
             </p>
           </div>
-          <div className="about-block">
-            <h3 className="highlights-title" style={{ marginBottom: '16px' }}>
-              Mission
-            </h3>
-            <p className="highlight-card-desc">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam euismod, urna eu tincidunt consectetur, nisi nisl aliquam eros, nec dictum sem urna at sapien. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
-            </p>
+          <div style={{ flexShrink: 0 }}>
+            <button
+              className="hero-btn hero-btn-blue"
+              style={{ minWidth: '140px', padding: '12px 24px', fontSize: '1rem' }}
+              onClick={openAboutModal}
+            >
+              Read More
+            </button>
           </div>
         </div>
       </section>
+
+      {/* readmore-modal */}
+      {showAboutModal && (
+        <div className="modal-overlay" onClick={closeAboutModal}>
+          <div className="modal-content" onClick={e => e.stopPropagation()}>
+            <div className="modal-header">
+              <h2 className="modal-title">About Us</h2>
+              <button className="modal-close" onClick={closeAboutModal}>×</button>
+            </div>
+            <div style={{ padding: '16px 0' }}>
+              <div style={{ marginBottom: '32px' }}>
+                <h3 className="highlights-title" style={{ marginBottom: '16px' }}>
+                  Vision
+                </h3>
+                <p className="highlight-card-desc">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam euismod, urna eu tincidunt consectetur, nisi nisl aliquam eros, nec dictum sem urna at sapien. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+                </p>
+              </div>
+              <div>
+                <h3 className="highlights-title" style={{ marginBottom: '16px' }}>
+                  Mission
+                </h3>
+                <p className="highlight-card-desc">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam euismod, urna eu tincidunt consectetur, nisi nisl aliquam eros, nec dictum sem urna at sapien. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* goals-sect */}
       <section id="goals" className="about-section">
