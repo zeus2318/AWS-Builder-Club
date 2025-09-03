@@ -265,6 +265,49 @@ html {
   box-shadow: var(--shadow-medium);
 }
 
+/* Testimony Section - styled similar to About Section */
+.testimony-section {
+  padding: 108px 24px;
+  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+  position: relative;
+}
+
+.testimony-section::before {
+  content: '';
+  position: absolute;
+  top: -50px;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+  clip-path: polygon(0 50px, 100% 0, 100% 50px, 0 100%);
+}
+
+.testimony-content {
+  position: relative;
+  z-index: 1;
+}
+
+.testimony-block {
+  background: var(--white);
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-light);
+  transition: var(--transition);
+  border-left: 4px solid var(--accent-orange);
+  margin-bottom: 32px;
+  width: 100%;
+}
+
+.testimony-block:last-child {
+  margin-bottom: 0;
+}
+
+.testimony-block:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-medium);
+}
+
 /* Highlights Section */
 .highlights-section {
   padding: 5rem 2rem;
@@ -767,6 +810,7 @@ html {
   .about-section {
     padding: 2rem 1rem !important;
   }
+
   
   .about-block {
     padding: 1.5rem;

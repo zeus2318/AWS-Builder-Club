@@ -4,6 +4,7 @@ import './App.css';
 function App() {
   const aboutRef = useRef(null);
   const homeRef = useRef(null);
+  const testimony = useRef(null);
 
   const [showModal, setShowModal] = React.useState(false);
   const [showAboutModal, setShowAboutModal] = React.useState(false);
@@ -11,7 +12,11 @@ function App() {
   const [showEventsModal, setShowEventsModal] = React.useState(false);
   const [showFAQModal, setShowFAQModal] = React.useState(false);
 
-  // Team navigation state
+  // modal states
+  const [teamModalPage, setTeamModalPage] = React.useState('main'); // 'main' or 'officers'
+  const [activeTeamSection, setActiveTeamSection] = React.useState('lead');
+
+  // project teams
   const teamSections = [
     {
       key: 'lead',
@@ -124,7 +129,71 @@ function App() {
     }
   ];
 
-  const [activeTeamSection, setActiveTeamSection] = React.useState('lead');
+  // aws officers
+  const awsOfficersSections = [
+    {
+      key: 'president',
+      label: 'President',
+      content: {
+        title: 'President',
+        leader: 'Ijed Luzele J. Yañez',
+        leaderRole: 'AWS Builders Club, President',
+        members: [
+          { name: 'Placeholder', role: 'Placeholder' }
+        ]
+      }
+    },
+    {
+      key: 'vicepresidentext',
+      label: 'Vice President (External)',
+      content: {
+        title: 'Vice President (External)',
+        leader: 'Josh Marco C. Goc-Ong',
+        leaderRole: 'AWS Builders Club, Vice President (External)',
+        members: [
+          { name: 'Placeholder', role: 'Placeholder' }
+        ]
+      }
+    },
+        {
+      key: 'vicepresidentint',
+      label: 'Vice President (Internal)',
+      content: {
+        title: 'Vice President (Internal)',
+        leader: 'James Nathaniel F. Tan',
+        leaderRole: 'AWS Builders Club, Vice President (Internal)',
+        members: [
+          { name: 'Placeholder', role: 'Placeholder' }
+        ]
+      }
+    },
+    {
+      key: 'secretary',
+      label: 'Secretary',
+      content: {
+        title: 'Secretary',
+        leader: 'Shanica B. Diaz',
+        leaderRole: 'AWS Builders Club, Secretary',
+        members: [
+          { name: 'Placeholder', role: 'Placeholder' }
+        ]
+      }
+    },
+        {
+      key: 'treasury',
+      label: 'Treasury',
+      content: {
+        title: 'Treasury',
+        leader: 'Karylle Grace K. Bontuyan',
+        leaderRole: 'AWS Builders Club, Treasury',
+        members: [
+          { name: 'Placeholder', role: 'Placeholder' }
+        ]
+      }
+    }
+    // Add more officer roles as needed
+  ];
+  const [activeOfficerSection, setActiveOfficerSection] = React.useState('president');
 
   const githubRepos = [
     { 
@@ -170,6 +239,13 @@ function App() {
     }
   };
 
+    const handleAboutClick3 = (e) => {
+    e.preventDefault();
+    if (testimony.current) {
+      testimony.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   const handleProjectsClick = (e) => {
     e.preventDefault();
     setShowModal(true);
@@ -210,6 +286,20 @@ function App() {
               Goals
             </a>
           </li>
+              <li>
+              <a
+                href="#testimonies"
+                className="navbar-link"
+                onClick={e => {
+                  e.preventDefault();
+                  if (testimony.current) {
+                    testimony.current.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
+              >
+                Testimonies
+              </a>
+            </li>
           {/* dropdown */}
           <li className="navbar-dropdown-parent">
             <button
@@ -347,40 +437,78 @@ function App() {
           Our Goals
         </h2>
         <div className="about-content" style={{ maxWidth: '800px', margin: '0 auto' }}>
-          <div
-            className="about-block"
-            style={{
-              marginBottom: '48px',
-              marginLeft: '0',
-              marginRight: 'auto',
-              width: '90%',
-              maxWidth: '600px'
-            }}
-          >
+          <div className="about-block" style={{ marginBottom: '32px', width: '100%' }}>
             <h3 className="highlights-title" style={{ marginBottom: '16px' }}>
-              Short-Term Goals
+              Hands-on Training and Skill Development
             </h3>
             <p className="highlight-card-desc">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam euismod, urna eu tincidunt consectetur, nisi nisl aliquam eros, nec dictum sem urna at sapien. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+              Develop hands-on cloud skills by participating in interactive AWS workshops, lab sessions, and community-led events.
             </p>
           </div>
-          <div
-            className="about-block"
-            style={{
-              marginBottom: '0',
-              marginLeft: 'auto',
-              marginRight: '0',
-              width: '90%',
-              maxWidth: '600px'
-            }}
-          >
+          <div className="about-block" style={{ marginBottom: '32px', width: '100%' }}>
             <h3 className="highlights-title" style={{ marginBottom: '16px' }}>
-              Long-Term Goals
+              Collaborative Projects And their Repositories
             </h3>
             <p className="highlight-card-desc">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam euismod, urna eu tincidunt consectetur, nisi nisl aliquam eros, nec dictum sem urna at sapien. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+              Build a strong community of learners by collaborating on real-world AWS cloud projects that foster teamwork, shared learning, and collective problem-solving.
             </p>
           </div>
+          <div className="about-block" style={{ marginBottom: '32px', width: '100%' }}>
+            <h3 className="highlights-title" style={{ marginBottom: '16px' }}>
+              Certification Support
+            </h3>
+            <p className="highlight-card-desc">
+              Equip AWS Builders Club members with the learning tools and mentorship needed to earn AWS certifications and boost their cloud careers.
+            </p>
+          </div>
+          <div className="about-block" style={{ marginBottom: '32px', width: '100%' }}>
+            <h3 className="highlights-title" style={{ marginBottom: '16px' }}>
+              Industry Alignment
+            </h3>
+            <p className="highlight-card-desc">
+              Keep pace with emerging cloud technologies and industry-relevant skills sought by today’s top employers.
+            </p>
+          </div>
+          <div className="about-block" style={{ marginBottom: '32px', width: '100%' }}>
+            <h3 className="highlights-title" style={{ marginBottom: '16px' }}>
+              Campus Impact
+            </h3>
+            <p className="highlight-card-desc">
+              Help promote cloud-related activities and solutions in different departments around the campus.
+            </p>
+          </div>
+          <div className="about-block" style={{ marginBottom: '32px', width: '100%' }}>
+            <h3 className="highlights-title" style={{ marginBottom: '16px' }}>
+              Fundraising
+            </h3>
+            <p className="highlight-card-desc">
+              Empower club growth by launching fundraising activities such as selling custom merchandise or organizing events.
+            </p>
+          </div>
+          <div className="about-block" style={{ marginBottom: '0', width: '100%' }}>
+            <h3 className="highlights-title" style={{ marginBottom: '16px' }}>
+              Mentorship and Peer Learning
+            </h3>
+            <p className="highlight-card-desc">
+              Foster a culture of knowledge sharing by pairing experienced members with beginners.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* testimonies-sect */}
+      <section id="testimonies" className="testimony-section" ref={testimony}>
+        <h2 className="hero-title" style={{ marginBottom: '32px' }}>
+          Testimonies
+        </h2>
+        <div className="testimony-content" style={{ maxWidth: '800px', margin: '0 auto' }}>
+          <div className="testimony-block">
+            <p>
+              “This club helped me learn AWS and connect with awesome people!”<br />
+              <span style={{ fontWeight: 'bold', color: 'var(--primary-blue)' }}>— Member Name</span>
+            </p>
+          </div>
+          {/* testimony-block */}
         </div>
       </section>
 
@@ -411,6 +539,9 @@ function App() {
 
       {/* footer */}
       <footer className="footer">
+        <button><p>Test-insta</p></button>
+        <button><p>Test-linkedin</p></button>
+        <button><p>Test-fb</p></button>
         <p>&copy; 2025 AWS Builders Club</p>
       </footer>
 
@@ -482,13 +613,34 @@ function App() {
 
       {/* Meet the Team Modal */}
       {showTeamModal && (
-        <div className="modal-overlay" onClick={() => setShowTeamModal(false)}>
+        <div className="modal-overlay" onClick={() => { setShowTeamModal(false); setTeamModalPage('main'); }}>
           <div className="modal-content" style={{ maxWidth: '900px', width: '100%' }} onClick={e => e.stopPropagation()}>
             <div className="modal-header">
-              <h2 className="modal-title">Meet the Team</h2>
-              <button className="modal-close" onClick={() => setShowTeamModal(false)}>×</button>
+              <h2 className="modal-title">
+                {teamModalPage === 'main' ? 'Meet the Team' : 'AWS Officers'}
+              </h2>
+              <button className="modal-close" onClick={() => { setShowTeamModal(false); setTeamModalPage('main'); }}>×</button>
             </div>
-            <div style={{ display: 'flex', gap: '32px', padding: '32px 0' }}>
+            <div style={{ padding: '16px 0', display: 'flex', justifyContent: 'flex-end' }}>
+              {teamModalPage === 'main' ? (
+                <button
+                  className="hero-btn hero-btn-blue"
+                  style={{ marginRight: '32px' }}
+                  onClick={() => setTeamModalPage('officers')}
+                >
+                  AWS Officers
+                </button>
+              ) : (
+                <button
+                  className="hero-btn hero-btn-blue"
+                  style={{ marginRight: '32px' }}
+                  onClick={() => setTeamModalPage('main')}
+                >
+                  Back to Team
+                </button>
+              )}
+            </div>
+            <div style={{ display: 'flex', gap: '32px', padding: '0 0 32px 0' }}>
               {/* Sidebar Navigation */}
               <div style={{
                 background: 'var(--primary-blue)',
@@ -500,23 +652,38 @@ function App() {
                 flexDirection: 'column',
                 gap: '8px'
               }}>
-                {teamSections.map(section => (
+                {(teamModalPage === 'main' ? teamSections : awsOfficersSections).map(section => (
                   <button
                     key={section.key}
                     style={{
-                      background: activeTeamSection === section.key ? '#0498eeff' : 'none',
-                      color: activeTeamSection === section.key ? '#fff' : '#fff',
+                      background: (teamModalPage === 'main'
+                        ? activeTeamSection === section.key
+                        : activeOfficerSection === section.key)
+                        ? '#0498eeff' : 'none',
+                      color: '#fff',
                       border: 'none',
                       borderRadius: '8px',
                       padding: '12px 24px',
-                      fontWeight: activeTeamSection === section.key ? 'bold' : 'normal',
+                      fontWeight: (teamModalPage === 'main'
+                        ? activeTeamSection === section.key
+                        : activeOfficerSection === section.key)
+                        ? 'bold' : 'normal',
                       margin: '0 24px 4px 24px',
                       cursor: 'pointer',
                       textAlign: 'left',
-                      opacity: activeTeamSection === section.key ? 1 : 0.85,
+                      opacity: (teamModalPage === 'main'
+                        ? activeTeamSection === section.key
+                        : activeOfficerSection === section.key)
+                        ? 1 : 0.85,
                       transition: 'background 0.2s'
                     }}
-                    onClick={() => setActiveTeamSection(section.key)}
+                    onClick={() => {
+                      if (teamModalPage === 'main') {
+                        setActiveTeamSection(section.key);
+                      } else {
+                        setActiveOfficerSection(section.key);
+                      }
+                    }}
                   >
                     {section.label}
                   </button>
@@ -524,49 +691,67 @@ function App() {
               </div>
               {/* Main Content */}
               <div style={{ flex: 1 }}>
-                <h2 style={{ color: 'var(--primary-blue)', marginBottom: '8px' }}>
-                  {teamSections.find(s => s.key === activeTeamSection).content.title}
-                </h2>
-                {/* Show multiple leaders for 'leaders' section */}
-                {activeTeamSection === 'leaders'
-                  ? teamSections.find(s => s.key === activeTeamSection).content.leaders.map((leader, idx) => (
-                      <div key={idx} style={{ fontWeight: 'bold', color: '#e53935', marginBottom: '8px' }}>
-                        {leader.name}
-                        <div style={{ marginBottom: '16px', fontWeight: 'normal', color: '#222' }}>
-                          • {leader.role}
-                        </div>
-                      </div>
-                    ))
-                  : (
-                    <>
-                      <div style={{ fontWeight: 'bold', color: '#e53935', marginBottom: '8px' }}>
-                        {teamSections.find(s => s.key === activeTeamSection).content.leader}
-                      </div>
-                      <div style={{ marginBottom: '16px' }}>
-                        • {teamSections.find(s => s.key === activeTeamSection).content.leaderRole}
-                      </div>
-                    </>
-                  )
-                }
-                {/* showing members */}
-                {activeTeamSection !== 'lead' && activeTeamSection !=='leaders' &&
-                  teamSections.find(s => s.key === activeTeamSection).content.members.length > 0 && (
-                    <>
-                      <div style={{ fontWeight: 'bold', marginBottom: '8px' }}>MEMBERS</div>
-                      <ul style={{ marginBottom: '24px', paddingLeft: '20px' }}>
-                        {teamSections.find(s => s.key === activeTeamSection).content.members.map((member, idx) => (
-                          <li key={idx}>
-                            {member.name}
-                            <span style={{ color: '#888', fontStyle: 'italic', marginLeft: '8px' }}>
-                              {member.role}
-                            </span>
-                          </li>
-                        ))}
-                      </ul>
-                    </>
-                  )
-                }
-                <hr style={{ margin: '24px 0', border: 'none', borderTop: '1px solid #ccc' }} />
+                {teamModalPage === 'main' ? (
+                  <>
+                    <h2 style={{ color: 'var(--primary-blue)', marginBottom: '8px' }}>
+                      {teamSections.find(s => s.key === activeTeamSection).content.title}
+                    </h2>
+                    {/* Show multiple leaders for 'leaders' section */}
+                    {activeTeamSection === 'leaders'
+                      ? teamSections.find(s => s.key === activeTeamSection).content.leaders.map((leader, idx) => (
+                          <div key={idx} style={{ fontWeight: 'bold', color: '#e53935', marginBottom: '8px' }}>
+                            {leader.name}
+                            <div style={{ marginBottom: '16px', fontWeight: 'normal', color: '#222' }}>
+                              • {leader.role}
+                            </div>
+                          </div>
+                        ))
+                      : (
+                        <>
+                          <div style={{ fontWeight: 'bold', color: '#e53935', marginBottom: '8px' }}>
+                            {teamSections.find(s => s.key === activeTeamSection).content.leader}
+                          </div>
+                          <div style={{ marginBottom: '16px' }}>
+                            • {teamSections.find(s => s.key === activeTeamSection).content.leaderRole}
+                          </div>
+                        </>
+                      )
+                    }
+                    {/* showing members */}
+                    {activeTeamSection !== 'lead' && activeTeamSection !=='leaders' &&
+                      teamSections.find(s => s.key === activeTeamSection).content.members.length > 0 && (
+                        <>
+                          <div style={{ fontWeight: 'bold', marginBottom: '8px' }}>MEMBERS</div>
+                          <ul style={{ marginBottom: '24px', paddingLeft: '20px' }}>
+                            {teamSections.find(s => s.key === activeTeamSection).content.members.map((member, idx) => (
+                              <li key={idx}>
+                                {member.name}
+                                <span style={{ color: '#888', fontStyle: 'italic', marginLeft: '8px' }}>
+                                  {member.role}
+                                </span>
+                              </li>
+                            ))}
+                          </ul>
+                        </>
+                      )
+                    }
+                  </>
+                ) : (
+                  <>
+                    <h2 style={{ color: 'var(--primary-blue)', marginBottom: '8px' }}>
+                      {awsOfficersSections.find(s => s.key === activeOfficerSection).content.title}
+                    </h2>
+                    <div style={{ fontWeight: 'bold', color: '#e53935', marginBottom: '8px' }}>
+                      {awsOfficersSections.find(s => s.key === activeOfficerSection).content.leader}
+                    </div>
+                    <div style={{ marginBottom: '16px' }}>
+                      • {awsOfficersSections.find(s => s.key === activeOfficerSection).content.leaderRole}
+                    </div>
+                    {/* hide members for officers */}
+                    {/* removed the members */}
+                    <hr style={{ margin: '24px 0', border: 'none', borderTop: '1px solid #ccc' }} />
+                  </>
+                )}
               </div>
             </div>
           </div>
