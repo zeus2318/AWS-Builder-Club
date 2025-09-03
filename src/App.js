@@ -191,7 +191,6 @@ function App() {
         ]
       }
     }
-    // Add more officer roles as needed
   ];
   const [activeOfficerSection, setActiveOfficerSection] = React.useState('president');
 
@@ -596,7 +595,7 @@ function App() {
                         style={{
                           background:
                             repo.language === 'JavaScript' ? '#f1e05a' :
-                            repo.language === 'Python' ? '#3572A5' :
+                            repo.language === 'Python' ? '#fbff00ff' :
                             repo.language === 'TypeScript' ? '#2b7489' :
                             '#4285f4'
                         }}
