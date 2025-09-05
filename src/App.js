@@ -193,7 +193,7 @@ function App() {
       }
     }
   ]; */
-  
+
   const [activeOfficerSection, setActiveOfficerSection] = React.useState('president');
 
   const githubRepos = [
@@ -498,20 +498,120 @@ function App() {
       </section>
 
       {/* testimonies-sect */}
+{/* Updated Testimonies Section - Properly Aligned */}
       <section id="testimonies" className="testimony-section" ref={testimony}>
         <h2 className="hero-title" style={{ marginBottom: '32px' }}>
           Testimonies
         </h2>
-        <div className="testimony-content" style={{ maxWidth: '800px', margin: '0 auto' }}>
+        <div className="testimony-content" style={{ 
+          maxWidth: '1200px', 
+          margin: '0 auto',
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(500px, 1fr))',
+          gap: '24px',
+          alignItems: 'start'
+        }}>
           <div className="testimony-block">
-            <p>
-              “This club helped me learn AWS and connect with awesome people!”<br />
-              <span style={{ fontWeight: 'bold', color: 'var(--primary-blue)' }}>— Member Name</span>
+            <p style={{ textAlign: 'justify', lineHeight: '1.7' }}>
+              "It's about understanding cloud infrastructure and unlocking the ability to build scalable, secure, and globally accessible solutions. Whether you're a student working on a capstone project or a professional launching a startup, AWS gives you the tools to innovate without limits. AWS has become a necessity for a business to stay ahead and not struggle. Especially in a rapidly evolving industry."
             </p>
+            <div style={{ textAlign: 'right', marginTop: '16px' }}>
+              <span style={{ fontWeight: 'bold', color: 'var(--primary-blue)' }}>— James Co</span>
+            </div>
           </div>
-          {/* testimony-block */}
+          
+          <div className="testimony-block">
+            <p style={{ textAlign: 'justify', lineHeight: '1.7' }}>
+              "Learning AWS is important because it leads the cloud market and has become the industry standard. This creates better job opportunities and higher salaries. It offers strong tools for quick innovation and testing without significant initial costs, while also teaching basic cloud computing principles that are now essential in today's tech jobs."
+            </p>
+            <div style={{ textAlign: 'right', marginTop: '16px' }}>
+              <span style={{ fontWeight: 'bold', color: 'var(--primary-blue)' }}>— John Mendoza</span>
+            </div>
+          </div>
+          
+          <div className="testimony-block">
+            <p style={{ textAlign: 'justify', lineHeight: '1.7' }}>
+              "Learning AWS opened my eyes to how modern businesses run on the cloud. It's not just theory—it's about applying what we learn to real systems that impact people's lives. AWS makes me feel prepared for the industry."
+            </p>
+            <div style={{ textAlign: 'right', marginTop: '16px' }}>
+              <span style={{ fontWeight: 'bold', color: 'var(--primary-blue)' }}>— Zidane Pasaje</span>
+            </div>
+          </div>
+          
+          <div className="testimony-block">
+            <p style={{ textAlign: 'justify', lineHeight: '1.7' }}>
+              "Amazon Web Services (AWS) is essential in modern technology as it is the leading cloud platform used by businesses worldwide, giving you in-demand skills, better job opportunities, and the tools to innovate in today's tech-driven world. Students can benefit from honing their skills in cloud computing and gain hands-on experience that prepares them for real-world projects, making them more competitive and future-ready in the tech industry."
+            </p>
+            <div style={{ textAlign: 'right', marginTop: '16px' }}>
+              <span style={{ fontWeight: 'bold', color: 'var(--primary-blue)' }}>— Ijed Yañez</span>
+            </div>
+          </div>
+          
+          <div className="testimony-block">
+            <p style={{ textAlign: 'justify', lineHeight: '1.7' }}>
+              "AWS has given me the chance to go beyond classroom learning and actually experience how cloud solutions are built. It's empowering to know I can apply these skills to both academic projects and future career opportunities."
+            </p>
+            <div style={{ textAlign: 'right', marginTop: '16px' }}>
+              <span style={{ fontWeight: 'bold', color: 'var(--primary-blue)' }}>— Trixie Cañete</span>
+            </div>
+          </div>
+          
+          <div className="testimony-block">
+            <p style={{ textAlign: 'justify', lineHeight: '1.7' }}>
+              "For me, learning AWS is about adaptability. Since most companies now rely on the cloud, understanding AWS means you're ready for wherever technology takes us. It gives students like us a head start."
+            </p>
+            <div style={{ textAlign: 'right', marginTop: '16px' }}>
+              <span style={{ fontWeight: 'bold', color: 'var(--primary-blue)' }}>— Gerald Nagliba</span>
+            </div>
+          </div>
+          
+          <div className="testimony-block">
+            <p style={{ textAlign: 'justify', lineHeight: '1.7' }}>
+              "AWS taught me how to think bigger. It's not just about coding—it's about creating scalable solutions that could actually serve thousands of users. That mindset is something every aspiring professional needs."
+            </p>
+            <div style={{ textAlign: 'right', marginTop: '16px' }}>
+              <span style={{ fontWeight: 'bold', color: 'var(--primary-blue)' }}>— Renzi Albastro</span>
+            </div>
+          </div>
+          
+          <div className="testimony-block">
+            <p style={{ textAlign: 'justify', lineHeight: '1.7' }}>
+              "AWS makes learning feel relevant and future-proof. It's more than just earning a certification; it's about developing the confidence to tackle real-world problems with the right tools."
+            </p>
+            <div style={{ textAlign: 'right', marginTop: '16px' }}>
+              <span style={{ fontWeight: 'bold', color: 'var(--primary-blue)' }}>— Karyll Bontuyan</span>
+            </div>
+          </div>
+          
+          <div className="testimony-block">
+            <p style={{ textAlign: 'justify', lineHeight: '1.7' }}>
+              "What I like about AWS is how it bridges theory and practice. You're not just imagining how systems work—you actually build and deploy them. That hands-on experience makes all the difference."
+            </p>
+            <div style={{ textAlign: 'right', marginTop: '16px' }}>
+              <span style={{ fontWeight: 'bold', color: 'var(--primary-blue)' }}>— Abe Javier</span>
+            </div>
+          </div>
+          
+          <div className="testimony-block">
+            <p style={{ textAlign: 'justify', lineHeight: '1.7' }}>
+              "Learning AWS has been a turning point in how I approach technology. Instead of just completing programming assignments, I can now deploy real applications on the cloud, which makes my work feel more meaningful and practical. I realized I could actually build and deploy my own projects just like the professionals. It transformed my confidence as a student. Suddenly, I wasn't just learning theory, I was creating solutions that could scale to millions of users."
+            </p>
+            <div style={{ textAlign: 'right', marginTop: '16px' }}>
+              <span style={{ fontWeight: 'bold', color: 'var(--primary-blue)' }}>— Lance Andres</span>
+            </div>
+          </div>
+          
+          <div className="testimony-block">
+            <p style={{ textAlign: 'justify', lineHeight: '1.7' }}>
+              "Learning AWS is essential for students because it gives them hands-on experience with cloud tools that power most modern apps and services. It helps them build scalable projects, understand real-world infrastructure, and stay competitive in a tech industry that's rapidly shifting. Learning AWS helped me understand how real-world apps run behind the scenes. As a graduating student, it gave me a serious edge in building cloud-based projects that actually reflect what companies use today."
+            </p>
+            <div style={{ textAlign: 'right', marginTop: '16px' }}>
+              <span style={{ fontWeight: 'bold', color: 'var(--primary-blue)' }}>— Hezron Nallos</span>
+            </div>
+          </div>
         </div>
       </section>
+
 
       {/* org-chart*/}
       {/* Organizational Chart Section */}
@@ -629,28 +729,24 @@ function App() {
       </section>
       {/* highlights-sect */}
       <section className="highlights-section">
-        <h3 className="highlights-title">Why Join AWS Builders Club?</h3>
-        <div className="highlights-grid">
-          <div className="highlight-card">
-            <h4 className="highlight-card-title blue">Community</h4>
-            <p className="highlight-card-desc">
-              Lorem ipsum dolor sit amet. Et galisum vero est esse corrupti non quod natus. Sit corporis ipsam non repellat aliquid vel porro odio cum assumenda explicabo hic consequuntur quas aut magnam eveniet et vero accusamus. Aut asperiores architecto sed cumque repellendus qui itaque nemo est unde animi nam maiores nulla sed ipsa deserunt.
+        <h3 className="highlights-title">Get Involved / Join Us</h3>
+        <div style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'center' }}>
+          <div className="highlight-card" style={{ marginBottom: '2rem' }}>
+            <p className="highlight-card-desc" style={{ fontSize: '1.1rem', lineHeight: '1.8', marginBottom: '2rem' }}>
+              Whether you're just starting your cloud journey or already exploring AWS, the AWS Builders' Club at Mapúa MCM welcomes you! By joining, you'll gain hands-on experience, connect with like-minded peers, and grow your skills through workshops, study sessions, and real projects. Together, we'll learn, collaborate, and shape our future careers in the cloud.
             </p>
-          </div>
-          <div className="highlight-card">
-            <h4 className="highlight-card-title orange">Innovation</h4>
-            <p className="highlight-card-desc">
-              Lorem ipsum dolor sit amet. Et galisum vero est esse corrupti non quod natus. Sit corporis ipsam non repellat aliquid vel porro odio cum assumenda explicabo hic consequuntur quas aut magnam eveniet et vero accusamus. Aut asperiores architecto sed cumque repellendus qui itaque nemo est unde animi nam maiores nulla sed ipsa deserunt.
-            </p>
-          </div>
-          <div className="highlight-card">
-            <h4 className="highlight-card-title blue">Learning</h4>
-            <p className="highlight-card-desc">
-              Lorem ipsum dolor sit amet. Et galisum vero est esse corrupti non quod natus. Sit corporis ipsam non repellat aliquid vel porro odio cum assumenda explicabo hic consequuntur quas aut magnam eveniet et vero accusamus. Aut asperiores architecto sed cumque repellendus qui itaque nemo est unde animi nam maiores nulla sed ipsa deserunt.
-            </p>
+            <a
+              href="https://discord.gg/UFGUPutKSR"
+              className="hero-btn hero-btn-blue"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ fontSize: '1.1rem', padding: '1rem 2.5rem' }}
+            >
+              Join the Club!
+            </a>
           </div>
         </div>
-      </section>
+      </section>  
 
       {/* project-modal */}
       {showModal && (
@@ -814,36 +910,156 @@ function App() {
 
       {/* events */}
       {showEventsModal && (
-      <div className="modal-overlay" onClick={() => setShowEventsModal(false)}>
-      <div className="modal-content" style={{ maxWidth: '700px', width: '100%' }} onClick={e => e.stopPropagation()}>
-        <div className="modal-header">
-          <h2 className="modal-title">Events</h2>
-          <button className="modal-close" onClick={() => setShowEventsModal(false)}>×</button>
-        </div>
-        <div style={{ padding: '24px 0' }}>
-          {/* event#1 */}
-          <div style={{ marginBottom: '32px' }}>
-            <h3 style={{ marginBottom: '8px', color: 'var(--primary-blue)' }}>AWS Introduction Workshop & Career Talk</h3>
-            <div style={{ fontStyle: 'italic', color: '#888', marginBottom: '4px' }}>
-              Week 8 (Sept 27) or Week 10 (Oct 11) • Auditorium • 80–90 participants
+        <div className="modal-overlay" onClick={() => setShowEventsModal(false)}>
+          <div className="modal-content" style={{ maxWidth: '800px', width: '100%' }} onClick={e => e.stopPropagation()}>
+            <div className="modal-header">
+              <h2 className="modal-title">Events</h2>
+              <button className="modal-close" onClick={() => setShowEventsModal(false)}>×</button>
             </div>
-            <p>
-              Led by Sir Clyde and a guest speaker, this workshop introduces cloud computing, covers AWS services 
-              (EC2, S3, Lambda), and provides hands-on practice in the AWS console. Includes interactive demos, 
-              activities, and a Q&A session. ₱200 registration fee.
-            </p>
-          </div>
-
-              {/* event#2 */}
-              <div>
-                <h3 style={{ marginBottom: '8px', color: 'var(--primary-blue)' }}>AWS Study Group</h3>
-                <div style={{ fontStyle: 'italic', color: '#888', marginBottom: '4px' }}>
-                Bi-weekly every Saturday • Sept 20 – Nov 8 • Led by Josh, James, Ijed with Sir Clyde
+            
+            <div style={{ padding: '24px 0' }}>
+              {/* Event #1 */}
+              <div style={{ 
+                background: 'linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%)',
+                borderRadius: '12px',
+                padding: '24px',
+                marginBottom: '24px',
+                border: '1px solid #dee2e6',
+                boxShadow: '0 2px 8px rgba(0,0,0,0.1)'
+              }}>
+                <div style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  marginBottom: '12px'
+                }}>
+                  <div style={{
+                    width: '8px',
+                    height: '8px',
+                    background: 'var(--secondary-blue)',
+                    borderRadius: '50%',
+                    marginRight: '12px'
+                  }}></div>
+                  <h3 style={{ 
+                    margin: '0',
+                    color: 'var(--primary-blue)',
+                    fontSize: '1.4rem',
+                    fontWeight: '700'
+                  }}>
+                    AWS Introduction Workshop & Career Talk
+                  </h3>
+                </div>
+                
+                <div style={{ 
+                  background: 'rgba(74, 144, 226, 0.1)',
+                  borderRadius: '8px',
+                  padding: '8px 12px',
+                  marginBottom: '16px',
+                  display: 'inline-block'
+                }}>
+                  <span style={{ 
+                    fontSize: '0.9rem',
+                    color: 'var(--primary-blue)',
+                    fontWeight: '600'
+                  }}>
+                    Week 8 (Sept 27) or Week 10 (Oct 11) • Auditorium • 80—90 participants
+                  </span>
+                </div>
+                
+                <p style={{ 
+                  color: 'var(--text-dark)',
+                  lineHeight: '1.6',
+                  margin: '0 0 16px 0'
+                }}>
+                  Led by Sir Clyde and a guest speaker, this workshop introduces cloud computing, covers AWS services 
+                  (EC2, S3, Lambda), and provides hands-on practice in the AWS console. Includes interactive demos, 
+                  activities, and a Q&A session.
+                </p>
+                
+                <div style={{
+                  background: 'var(--accent-orange)',
+                  color: 'white',
+                  padding: '6px 12px',
+                  borderRadius: '6px',
+                  display: 'inline-block',
+                  fontSize: '0.9rem',
+                  fontWeight: '600'
+                }}>
+                   ₱200 registration fee
+                </div>
               </div>
-                <p>
+
+              {/* Event #2 */}
+              <div style={{ 
+                background: 'linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%)',
+                borderRadius: '12px',
+                padding: '24px',
+                border: '1px solid #dee2e6',
+                boxShadow: '0 2px 8px rgba(0,0,0,0.1)'
+              }}>
+                <div style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  marginBottom: '12px'
+                }}>
+                  <div style={{
+                    width: '8px',
+                    height: '8px',
+                    background: 'var(--accent-orange)',
+                    borderRadius: '50%',
+                    marginRight: '12px'
+                  }}></div>
+                  <h3 style={{ 
+                    margin: '0',
+                    color: 'var(--primary-blue)',
+                    fontSize: '1.4rem',
+                    fontWeight: '700'
+                  }}>
+                    AWS Study Group
+                  </h3>
+                </div>
+                
+                <div style={{ 
+                  background: 'rgba(255, 153, 0, 0.1)',
+                  borderRadius: '8px',
+                  padding: '8px 12px',
+                  marginBottom: '16px',
+                  display: 'inline-block'
+                }}>
+                  <span style={{ 
+                    fontSize: '0.9rem',
+                    color: 'var(--accent-orange)',
+                    fontWeight: '600'
+                  }}>
+                    Bi-weekly every Saturday •  Sept 20 — Nov 8 • Led by Josh, James, Ijed with Sir Clyde
+                  </span>
+                </div>
+                
+                <p style={{ 
+                  color: 'var(--text-dark)',
+                  lineHeight: '1.6',
+                  margin: '0'
+                }}>
                   Structured sessions covering AWS Cloud Fundamentals, Core Services, Security & Compliance, 
                   and Management Tools. Hands-on practice, peer collaboration, and guidance for AWS 
                   certification pathways.
+                </p>
+              </div>
+              
+              {/* Additional Info */}
+              <div style={{
+                background: 'linear-gradient(135deg, rgba(74, 144, 226, 0.05) 0%, rgba(255, 153, 0, 0.05) 100%)',
+                borderRadius: '8px',
+                padding: '16px',
+                marginTop: '24px',
+                textAlign: 'center'
+              }}>
+                <p style={{ 
+                  color: 'var(--text-light)',
+                  fontSize: '0.9rem',
+                  margin: '0',
+                  fontStyle: 'italic'
+                }}>
+                  Stay tuned for our upcoming events!
                 </p>
               </div>
             </div>
@@ -869,7 +1085,7 @@ function App() {
             href="https://discord.gg/UFGUPutKSR"
             target="_blank"
             rel="noopener noreferrer"
-            style={{color: "#fff", textDecoration: "none"}}
+            style={{color: "#6200ffff", textDecoration: "none"}}
             >
               Discord
           </a>
@@ -877,7 +1093,7 @@ function App() {
             href="https://instagram.com/"
             target="_blank"
             rel="noopener noreferrer"
-            style={{color: "#fff", textDecoration: "none"}}
+            style={{color: "#fa02d9ff", textDecoration: "none"}}
             >
               Instagram
           </a>
@@ -885,7 +1101,7 @@ function App() {
             href="https://linkedin.com/"
             target="_blank"
             rel="noopener noreferrer"
-            style={{color: "#fff", textDecoration: "none"}}
+            style={{color: "#4c95e9ff", textDecoration: "none"}}
             >
               LinkedIn
           </a>
@@ -893,7 +1109,7 @@ function App() {
             href="https://facebook.com/"
             target="_blank"
             rel="noopener noreferrer"
-            style={{color: "#fff", textDecoration: "none"}}
+            style={{color: "#1344e2ff", textDecoration: "none"}}
             >
               Facebook
           </a>
