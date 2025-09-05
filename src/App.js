@@ -5,6 +5,7 @@ function App() {
   const aboutRef = useRef(null);
   const homeRef = useRef(null);
   const testimony = useRef(null);
+  const orgChartRef = useRef(null);
 
   const [showModal, setShowModal] = React.useState(false);
   const [showAboutModal, setShowAboutModal] = React.useState(false);
@@ -130,7 +131,7 @@ function App() {
   ];
 
   // aws officers
-  const awsOfficersSections = [
+/*  const awsOfficersSections = [
     {
       key: 'president',
       label: 'President',
@@ -148,7 +149,7 @@ function App() {
       label: 'Vice President (External)',
       content: {
         title: 'Vice President (External)',
-        leader: 'Josh Marco C. Goc-Ong',
+        leader: 'James Nathaniel F. Tan',
         leaderRole: 'AWS Builders Club, Vice President (External)',
         members: [
           { name: 'Placeholder', role: 'Placeholder' }
@@ -160,7 +161,7 @@ function App() {
       label: 'Vice President (Internal)',
       content: {
         title: 'Vice President (Internal)',
-        leader: 'James Nathaniel F. Tan',
+        leader: 'Josh Marco C. Goc-Ong',
         leaderRole: 'AWS Builders Club, Vice President (Internal)',
         members: [
           { name: 'Placeholder', role: 'Placeholder' }
@@ -191,7 +192,8 @@ function App() {
         ]
       }
     }
-  ];
+  ]; */
+  
   const [activeOfficerSection, setActiveOfficerSection] = React.useState('president');
 
   const githubRepos = [
@@ -511,6 +513,120 @@ function App() {
         </div>
       </section>
 
+      {/* org-chart*/}
+      {/* Organizational Chart Section */}
+      <section id="orgchart" className="org-chart-section" ref={orgChartRef}>
+        <h2 className="section-title">Our Organization</h2>
+        
+        <div className="chart-container">
+          {/* Instructor Level */}
+          <div className="instructor-level">
+            <div className="instructor-card">
+              <div className="instructor-name">Clyde Chester R. Balaman</div>
+              <div className="instructor-role">Instructor</div>
+            </div>
+          </div>
+
+          {/* Connecting Lines */}
+          <div className="connection-line vertical-main"></div>
+          <div className="connection-line horizontal-officers"></div>
+
+          {/* Officers Level */}
+          <div className="officers-level">
+            <div className="officer-card">
+              <div className="officer-name">Ijed Luzele Yañez</div>
+              <div className="officer-role">President</div>
+            </div>
+            <div className="officer-card">
+              <div className="officer-name">James Nathaniel Tan</div>
+              <div className="officer-role">Vice President (External)</div>
+            </div>
+            <div className="officer-card">
+              <div className="officer-name">Josh Marco Goc-Ong</div>
+              <div className="officer-role">Vice President (Internal)</div>
+            </div>
+            <div className="officer-card">
+              <div className="officer-name">Shanica Diaz</div>
+              <div className="officer-role">Secretary</div>
+            </div>
+            <div className="officer-card">
+              <div className="officer-name">Karylle Grace Bontuyan</div>
+              <div className="officer-role">Treasurer</div>
+            </div>
+          </div>
+
+          {/* Members Level */}
+          <div className="members-level">
+            <div className="members-title">Club Members</div>
+            <div className="members-grid">
+              <div className="member-card">
+                <div className="member-name">Renzi Albastro</div>
+                <div className="member-role">Lead Moderator</div>
+              </div>
+              <div className="member-card">
+                <div className="member-name">Beau Renfro Crieta</div>
+                <div className="member-role">Event Organizer</div>
+              </div>
+              <div className="member-card">
+                <div className="member-name">Zidane Pasaje</div>
+                <div className="member-role">Flex Assistant</div>
+              </div>
+              <div className="member-card">
+                <div className="member-name">Lance Ranielle Andres</div>
+                <div className="member-role">Developer</div>
+              </div>
+              <div className="member-card">
+                <div className="member-name">Kurt Arnyle Gadingan</div>
+                <div className="member-role">Moderator</div>
+              </div>
+              <div className="member-card">
+                <div className="member-name">Gerald Andre Nagliba</div>
+                <div className="member-role">Moderator</div>
+              </div>
+              <div className="member-card">
+                <div className="member-name">Desiree Joy Bigot</div>
+                <div className="member-role">Content/Resource Center</div>
+              </div>
+              <div className="member-card">
+                <div className="member-name">Chass Clayton Estomo</div>
+                <div className="member-role">Developer</div>
+              </div>
+              <div className="member-card">
+                <div className="member-name">Hezron Nallos</div>
+                <div className="member-role">QA Lead</div>
+              </div>
+              <div className="member-card">
+                <div className="member-name">Trixie Nin Canete</div>
+                <div className="member-role">Graphic Designer</div>
+              </div>
+              <div className="member-card">
+                <div className="member-name">Abe Jaylil Javier</div>
+                <div className="member-role">Developer</div>
+              </div>
+              <div className="member-card">
+                <div className="member-name">Arabella L. Ortega</div>
+                <div className="member-role">AWS Developer</div>
+              </div>
+              <div className="member-card">
+                <div className="member-name">Jamril Maclain Parreño</div>
+                <div className="member-role">Content/Resource Center</div>
+              </div>
+              <div className="member-card">
+                <div className="member-name">Joshua Marc Masellones</div>
+                <div className="member-role">Lead Front-End Developer</div>
+              </div>
+              <div className="member-card">
+                <div className="member-name">James Virgil Co</div>
+                <div className="member-role">QA Tester</div>
+              </div>
+              <div className="member-card">
+                <div className="member-name">John Bernard Mendoza</div>
+                <div className="member-role">QA Tester</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       {/* highlights-sect */}
       <section className="highlights-section">
         <h3 className="highlights-title">Why Join AWS Builders Club?</h3>
@@ -536,15 +652,7 @@ function App() {
         </div>
       </section>
 
-      {/* footer */}
-      <footer className="footer">
-        <button><p>Test-insta</p></button>
-        <button><p>Test-linkedin</p></button>
-        <button><p>Test-fb</p></button>
-        <p>&copy; 2025 AWS Builders Club</p>
-      </footer>
-
-      {/* Modal for Projects */}
+      {/* project-modal */}
       {showModal && (
         <div className="modal-overlay" onClick={closeModal}>
           <div className="modal-content" onClick={e => e.stopPropagation()}>
@@ -612,34 +720,14 @@ function App() {
 
       {/* Meet the Team Modal */}
       {showTeamModal && (
-        <div className="modal-overlay" onClick={() => { setShowTeamModal(false); setTeamModalPage('main'); }}>
+        <div className="modal-overlay" onClick={() => setShowTeamModal(false)}>
           <div className="modal-content" style={{ maxWidth: '900px', width: '100%' }} onClick={e => e.stopPropagation()}>
             <div className="modal-header">
-              <h2 className="modal-title">
-                {teamModalPage === 'main' ? 'Meet the Team' : 'AWS Officers'}
-              </h2>
-              <button className="modal-close" onClick={() => { setShowTeamModal(false); setTeamModalPage('main'); }}>×</button>
+              <h2 className="modal-title">Meet the Team</h2>
+              <button className="modal-close" onClick={() => setShowTeamModal(false)}>×</button>
             </div>
-            <div style={{ padding: '16px 0', display: 'flex', justifyContent: 'flex-end' }}>
-              {teamModalPage === 'main' ? (
-                <button
-                  className="hero-btn hero-btn-blue"
-                  style={{ marginRight: '32px' }}
-                  onClick={() => setTeamModalPage('officers')}
-                >
-                  AWS Officers
-                </button>
-              ) : (
-                <button
-                  className="hero-btn hero-btn-blue"
-                  style={{ marginRight: '32px' }}
-                  onClick={() => setTeamModalPage('main')}
-                >
-                  Back to Team
-                </button>
-              )}
-            </div>
-            <div style={{ display: 'flex', gap: '32px', padding: '0 0 32px 0' }}>
+            
+            <div style={{ display: 'flex', gap: '32px', padding: '24px 0' }}>
               {/* Sidebar Navigation */}
               <div style={{
                 background: 'var(--primary-blue)',
@@ -651,146 +739,172 @@ function App() {
                 flexDirection: 'column',
                 gap: '8px'
               }}>
-                {(teamModalPage === 'main' ? teamSections : awsOfficersSections).map(section => (
+                {teamSections.map(section => (
                   <button
                     key={section.key}
                     style={{
-                      background: (teamModalPage === 'main'
-                        ? activeTeamSection === section.key
-                        : activeOfficerSection === section.key)
-                        ? '#0498eeff' : 'none',
+                      background: activeTeamSection === section.key ? '#0498eeff' : 'none',
                       color: '#fff',
                       border: 'none',
                       borderRadius: '8px',
                       padding: '12px 24px',
-                      fontWeight: (teamModalPage === 'main'
-                        ? activeTeamSection === section.key
-                        : activeOfficerSection === section.key)
-                        ? 'bold' : 'normal',
+                      fontWeight: activeTeamSection === section.key ? 'bold' : 'normal',
                       margin: '0 24px 4px 24px',
                       cursor: 'pointer',
                       textAlign: 'left',
-                      opacity: (teamModalPage === 'main'
-                        ? activeTeamSection === section.key
-                        : activeOfficerSection === section.key)
-                        ? 1 : 0.85,
+                      opacity: activeTeamSection === section.key ? 1 : 0.85,
                       transition: 'background 0.2s'
                     }}
-                    onClick={() => {
-                      if (teamModalPage === 'main') {
-                        setActiveTeamSection(section.key);
-                      } else {
-                        setActiveOfficerSection(section.key);
-                      }
-                    }}
+                    onClick={() => setActiveTeamSection(section.key)}
                   >
                     {section.label}
                   </button>
                 ))}
               </div>
+              
               {/* Main Content */}
               <div style={{ flex: 1 }}>
-                {teamModalPage === 'main' ? (
-                  <>
-                    <h2 style={{ color: 'var(--primary-blue)', marginBottom: '8px' }}>
-                      {teamSections.find(s => s.key === activeTeamSection).content.title}
-                    </h2>
-                    {/* Show multiple leaders for 'leaders' section */}
-                    {activeTeamSection === 'leaders'
-                      ? teamSections.find(s => s.key === activeTeamSection).content.leaders.map((leader, idx) => (
-                          <div key={idx} style={{ fontWeight: 'bold', color: '#e53935', marginBottom: '8px' }}>
-                            {leader.name}
-                            <div style={{ marginBottom: '16px', fontWeight: 'normal', color: '#222' }}>
-                              • {leader.role}
-                            </div>
-                          </div>
-                        ))
-                      : (
-                        <>
-                          <div style={{ fontWeight: 'bold', color: '#e53935', marginBottom: '8px' }}>
-                            {teamSections.find(s => s.key === activeTeamSection).content.leader}
-                          </div>
-                          <div style={{ marginBottom: '16px' }}>
-                            • {teamSections.find(s => s.key === activeTeamSection).content.leaderRole}
-                          </div>
-                        </>
-                      )
-                    }
-                    {/* showing members */}
-                    {activeTeamSection !== 'lead' && activeTeamSection !=='leaders' &&
-                      teamSections.find(s => s.key === activeTeamSection).content.members.length > 0 && (
-                        <>
-                          <div style={{ fontWeight: 'bold', marginBottom: '8px' }}>MEMBERS</div>
-                          <ul style={{ marginBottom: '24px', paddingLeft: '20px' }}>
-                            {teamSections.find(s => s.key === activeTeamSection).content.members.map((member, idx) => (
-                              <li key={idx}>
-                                {member.name}
-                                <span style={{ color: '#888', fontStyle: 'italic', marginLeft: '8px' }}>
-                                  {member.role}
-                                </span>
-                              </li>
-                            ))}
-                          </ul>
-                        </>
-                      )
-                    }
-                  </>
-                ) : (
-                  <>
-                    <h2 style={{ color: 'var(--primary-blue)', marginBottom: '8px' }}>
-                      {awsOfficersSections.find(s => s.key === activeOfficerSection).content.title}
-                    </h2>
-                    <div style={{ fontWeight: 'bold', color: '#e53935', marginBottom: '8px' }}>
-                      {awsOfficersSections.find(s => s.key === activeOfficerSection).content.leader}
-                    </div>
-                    <div style={{ marginBottom: '16px' }}>
-                      • {awsOfficersSections.find(s => s.key === activeOfficerSection).content.leaderRole}
-                    </div>
-                    {/* hide members for officers */}
-                    {/* removed the members */}
-                    <hr style={{ margin: '24px 0', border: 'none', borderTop: '1px solid #ccc' }} />
-                  </>
-                )}
+                <h2 style={{ color: 'var(--primary-blue)', marginBottom: '8px' }}>
+                  {teamSections.find(s => s.key === activeTeamSection).content.title}
+                </h2>
+                
+                {activeTeamSection === 'leaders'
+                  ? teamSections.find(s => s.key === activeTeamSection).content.leaders.map((leader, idx) => (
+                      <div key={idx} style={{ fontWeight: 'bold', color: '#e53935', marginBottom: '8px' }}>
+                        {leader.name}
+                        <div style={{ marginBottom: '16px', fontWeight: 'normal', color: '#222' }}>
+                          • {leader.role}
+                        </div>
+                      </div>
+                    ))
+                  : (
+                    <>
+                      <div style={{ fontWeight: 'bold', color: '#e53935', marginBottom: '8px' }}>
+                        {teamSections.find(s => s.key === activeTeamSection).content.leader}
+                      </div>
+                      <div style={{ marginBottom: '16px' }}>
+                        • {teamSections.find(s => s.key === activeTeamSection).content.leaderRole}
+                      </div>
+                    </>
+                  )
+                }
+                
+                {activeTeamSection !== 'lead' && activeTeamSection !== 'leaders' &&
+                  teamSections.find(s => s.key === activeTeamSection).content.members.length > 0 && (
+                    <>
+                      <div style={{ fontWeight: 'bold', marginBottom: '8px' }}>MEMBERS</div>
+                      <ul style={{ marginBottom: '24px', paddingLeft: '20px' }}>
+                        {teamSections.find(s => s.key === activeTeamSection).content.members.map((member, idx) => (
+                          <li key={idx}>
+                            {member.name}
+                            <span style={{ color: '#888', fontStyle: 'italic', marginLeft: '8px' }}>
+                              {member.role}
+                            </span>
+                          </li>
+                        ))}
+                      </ul>
+                    </>
+                  )
+                }
               </div>
             </div>
           </div>
         </div>
       )}
 
-      {/* Events */}
+      {/* events */}
       {showEventsModal && (
-        <div className="modal-overlay" onClick={() => setShowEventsModal(false)}>
-          <div className="modal-content" style={{ maxWidth: '600px', width: '100%' }} onClick={e => e.stopPropagation()}>
-            <div className="modal-header">
-              <h2 className="modal-title">Events</h2>
-              <button className="modal-close" onClick={() => setShowEventsModal(false)}>×</button>
+      <div className="modal-overlay" onClick={() => setShowEventsModal(false)}>
+      <div className="modal-content" style={{ maxWidth: '700px', width: '100%' }} onClick={e => e.stopPropagation()}>
+        <div className="modal-header">
+          <h2 className="modal-title">Events</h2>
+          <button className="modal-close" onClick={() => setShowEventsModal(false)}>×</button>
+        </div>
+        <div style={{ padding: '24px 0' }}>
+          {/* event#1 */}
+          <div style={{ marginBottom: '32px' }}>
+            <h3 style={{ marginBottom: '8px', color: 'var(--primary-blue)' }}>AWS Introduction Workshop & Career Talk</h3>
+            <div style={{ fontStyle: 'italic', color: '#888', marginBottom: '4px' }}>
+              Week 8 (Sept 27) or Week 10 (Oct 11) • Auditorium • 80–90 participants
             </div>
-            <div style={{ padding: '24px 0' }}>
-              <div style={{ marginBottom: '24px' }}>
-                <h3 style={{ marginBottom: '8px', color: 'var(--primary-blue)' }}>AWS Study Jam</h3>
-                <div style={{ fontStyle: 'italic', color: '#888', marginBottom: '4px' }}>Group Study Session</div>
-                <p>
-                  Join our collaborative AWS Study Jan group study session to learn and review AWS concepts together. Perfect for beginners and those preparing for certifications!
-                </p>
-              </div>
-              <div style={{ marginBottom: '24px' }}>
-                <h3 style={{ marginBottom: '8px', color: 'var(--primary-blue)' }}>Launchpad Workshops</h3>
-                <div style={{ fontStyle: 'italic', color: '#888', marginBottom: '4px' }}>Workshop</div>
-                <p>
-                  Hands-on workshops designed to help you build real-world AWS skills. Participate in guided labs and interactive sessions led by experienced mentors.
-                </p>
-              </div>
+            <p>
+              Led by Sir Clyde and a guest speaker, this workshop introduces cloud computing, covers AWS services 
+              (EC2, S3, Lambda), and provides hands-on practice in the AWS console. Includes interactive demos, 
+              activities, and a Q&A session. ₱200 registration fee.
+            </p>
+          </div>
+
+              {/* event#2 */}
               <div>
-                <h3 style={{ marginBottom: '8px', color: 'var(--primary-blue)' }}>Cloud Career Compass</h3>
-                <div style={{ fontStyle: 'italic', color: '#888', marginBottom: '4px' }}>Career Talks</div>
+                <h3 style={{ marginBottom: '8px', color: 'var(--primary-blue)' }}>AWS Study Group</h3>
+                <div style={{ fontStyle: 'italic', color: '#888', marginBottom: '4px' }}>
+                Bi-weekly every Saturday • Sept 20 – Nov 8 • Led by Josh, James, Ijed with Sir Clyde
+              </div>
                 <p>
-                  Discover career opportunities in cloud computing! Hear from industry professionals and alumni about their journeys and get tips for launching your own cloud career.
+                  Structured sessions covering AWS Cloud Fundamentals, Core Services, Security & Compliance, 
+                  and Management Tools. Hands-on practice, peer collaboration, and guidance for AWS 
+                  certification pathways.
                 </p>
               </div>
             </div>
           </div>
         </div>
       )}
+
+       {/* footer */}
+      <footer className="footer">
+        <div style={{ marginBottom: "16px" }}>
+          <p>
+            Contact us at: {""}
+            <a
+            href="mailto:placeholder@mcm.edu.ph"
+            style={{ color: "#ff9900", textDecoration: "none", fontWeight: "bold"}}
+            >
+              placeholder@mcm.edu.ph
+            </a>
+          </p>
+        </div>
+        <div style={{ display: "flex", justifyContent: "center", gap: "24px", marginBottom: "16px" }}>
+          <a
+            href="https://discord.gg/UFGUPutKSR"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{color: "#fff", textDecoration: "none"}}
+            >
+              Discord
+          </a>
+          <a
+            href="https://instagram.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{color: "#fff", textDecoration: "none"}}
+            >
+              Instagram
+          </a>
+          <a
+            href="https://linkedin.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{color: "#fff", textDecoration: "none"}}
+            >
+              LinkedIn
+          </a>
+          <a
+            href="https://facebook.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{color: "#fff", textDecoration: "none"}}
+            >
+              Facebook
+          </a>
+          </div>
+          <p style={{ fontStyle: "italic", marginBottom: "8px"}}>
+            Let's build the future of cloud, together.
+          </p>
+          <p>&copy; 2025 AWS Builders Club</p>
+          
+      </footer>
+
 
       {/* FAQ Modal */}
       {showFAQModal && (
