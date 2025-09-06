@@ -81,7 +81,7 @@ function App() {
       label: 'AWS Cloud Team',
       content: {
         title: 'AWS Cloud Team',
-        leader: 'Karylle Grace K. Bontuyan',
+        leader: 'Karyll Grace K. Bontuyan',
         leaderRole: 'AWS Builder Club, Lead Solutions Architect',
         members: [
           { name: 'Arabella L. Ortega', role: 'AWS Developer' }
@@ -258,7 +258,7 @@ function App() {
 
   return (
     <div className="app-bg app-text app-font min-height flex-col">
-      {/* Main Navigation */}
+      {/* main-navigation */}
       <nav className="navbar">
         <img
           src={require("./images/aws-builder-logo.png")}
@@ -498,7 +498,6 @@ function App() {
       </section>
 
       {/* testimonies-sect */}
-{/* Updated Testimonies Section - Properly Aligned */}
       <section id="testimonies" className="testimony-section" ref={testimony}>
         <h2 className="hero-title" style={{ marginBottom: '32px' }}>
           Testimonies
@@ -507,105 +506,205 @@ function App() {
           maxWidth: '1200px', 
           margin: '0 auto',
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(500px, 1fr))',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 450px), 1fr))',
           gap: '24px',
-          alignItems: 'start'
+          alignItems: 'start',
+          padding: '0 16px'
         }}>
-          <div className="testimony-block">
-            <p style={{ textAlign: 'justify', lineHeight: '1.7' }}>
+          <div className="testimony-block" style={{ 
+            minHeight: 'auto',
+            display: 'flex',
+            flexDirection: 'column'
+          }}>
+            <p style={{ 
+              textAlign: 'justify', 
+              lineHeight: '1.7',
+              flex: '1',
+              marginBottom: '16px'
+            }}>
               "It's about understanding cloud infrastructure and unlocking the ability to build scalable, secure, and globally accessible solutions. Whether you're a student working on a capstone project or a professional launching a startup, AWS gives you the tools to innovate without limits. AWS has become a necessity for a business to stay ahead and not struggle. Especially in a rapidly evolving industry."
             </p>
-            <div style={{ textAlign: 'right', marginTop: '16px' }}>
+            <div style={{ textAlign: 'right', marginTop: 'auto' }}>
               <span style={{ fontWeight: 'bold', color: 'var(--primary-blue)' }}>— James Co</span>
             </div>
           </div>
           
-          <div className="testimony-block">
-            <p style={{ textAlign: 'justify', lineHeight: '1.7' }}>
+          <div className="testimony-block" style={{ 
+            minHeight: 'auto',
+            display: 'flex',
+            flexDirection: 'column'
+          }}>
+            <p style={{ 
+              textAlign: 'justify', 
+              lineHeight: '1.7',
+              flex: '1',
+              marginBottom: '16px'
+            }}>
               "Learning AWS is important because it leads the cloud market and has become the industry standard. This creates better job opportunities and higher salaries. It offers strong tools for quick innovation and testing without significant initial costs, while also teaching basic cloud computing principles that are now essential in today's tech jobs."
             </p>
-            <div style={{ textAlign: 'right', marginTop: '16px' }}>
+            <div style={{ textAlign: 'right', marginTop: 'auto' }}>
               <span style={{ fontWeight: 'bold', color: 'var(--primary-blue)' }}>— John Mendoza</span>
             </div>
           </div>
           
-          <div className="testimony-block">
-            <p style={{ textAlign: 'justify', lineHeight: '1.7' }}>
+          <div className="testimony-block" style={{ 
+            minHeight: 'auto',
+            display: 'flex',
+            flexDirection: 'column'
+          }}>
+            <p style={{ 
+              textAlign: 'justify', 
+              lineHeight: '1.7',
+              flex: '1',
+              marginBottom: '16px'
+            }}>
               "Learning AWS opened my eyes to how modern businesses run on the cloud. It's not just theory—it's about applying what we learn to real systems that impact people's lives. AWS makes me feel prepared for the industry."
             </p>
-            <div style={{ textAlign: 'right', marginTop: '16px' }}>
+            <div style={{ textAlign: 'right', marginTop: 'auto' }}>
               <span style={{ fontWeight: 'bold', color: 'var(--primary-blue)' }}>— Zidane Pasaje</span>
             </div>
           </div>
           
-          <div className="testimony-block">
-            <p style={{ textAlign: 'justify', lineHeight: '1.7' }}>
+          <div className="testimony-block" style={{ 
+            minHeight: 'auto',
+            display: 'flex',
+            flexDirection: 'column'
+          }}>
+            <p style={{ 
+              textAlign: 'justify', 
+              lineHeight: '1.7',
+              flex: '1',
+              marginBottom: '16px'
+            }}>
               "Amazon Web Services (AWS) is essential in modern technology as it is the leading cloud platform used by businesses worldwide, giving you in-demand skills, better job opportunities, and the tools to innovate in today's tech-driven world. Students can benefit from honing their skills in cloud computing and gain hands-on experience that prepares them for real-world projects, making them more competitive and future-ready in the tech industry."
             </p>
-            <div style={{ textAlign: 'right', marginTop: '16px' }}>
+            <div style={{ textAlign: 'right', marginTop: 'auto' }}>
               <span style={{ fontWeight: 'bold', color: 'var(--primary-blue)' }}>— Ijed Yañez</span>
             </div>
           </div>
           
-          <div className="testimony-block">
-            <p style={{ textAlign: 'justify', lineHeight: '1.7' }}>
+          <div className="testimony-block" style={{ 
+            minHeight: 'auto',
+            display: 'flex',
+            flexDirection: 'column'
+          }}>
+            <p style={{ 
+              textAlign: 'justify', 
+              lineHeight: '1.7',
+              flex: '1',
+              marginBottom: '16px'
+            }}>
               "AWS has given me the chance to go beyond classroom learning and actually experience how cloud solutions are built. It's empowering to know I can apply these skills to both academic projects and future career opportunities."
             </p>
-            <div style={{ textAlign: 'right', marginTop: '16px' }}>
+            <div style={{ textAlign: 'right', marginTop: 'auto' }}>
               <span style={{ fontWeight: 'bold', color: 'var(--primary-blue)' }}>— Trixie Cañete</span>
             </div>
           </div>
           
-          <div className="testimony-block">
-            <p style={{ textAlign: 'justify', lineHeight: '1.7' }}>
+          <div className="testimony-block" style={{ 
+            minHeight: 'auto',
+            display: 'flex',
+            flexDirection: 'column'
+          }}>
+            <p style={{ 
+              textAlign: 'justify', 
+              lineHeight: '1.7',
+              flex: '1',
+              marginBottom: '16px'
+            }}>
               "For me, learning AWS is about adaptability. Since most companies now rely on the cloud, understanding AWS means you're ready for wherever technology takes us. It gives students like us a head start."
             </p>
-            <div style={{ textAlign: 'right', marginTop: '16px' }}>
+            <div style={{ textAlign: 'right', marginTop: 'auto' }}>
               <span style={{ fontWeight: 'bold', color: 'var(--primary-blue)' }}>— Gerald Nagliba</span>
             </div>
           </div>
           
-          <div className="testimony-block">
-            <p style={{ textAlign: 'justify', lineHeight: '1.7' }}>
+          <div className="testimony-block" style={{ 
+            minHeight: 'auto',
+            display: 'flex',
+            flexDirection: 'column'
+          }}>
+            <p style={{ 
+              textAlign: 'justify', 
+              lineHeight: '1.7',
+              flex: '1',
+              marginBottom: '16px'
+            }}>
               "AWS taught me how to think bigger. It's not just about coding—it's about creating scalable solutions that could actually serve thousands of users. That mindset is something every aspiring professional needs."
             </p>
-            <div style={{ textAlign: 'right', marginTop: '16px' }}>
+            <div style={{ textAlign: 'right', marginTop: 'auto' }}>
               <span style={{ fontWeight: 'bold', color: 'var(--primary-blue)' }}>— Renzi Albastro</span>
             </div>
           </div>
           
-          <div className="testimony-block">
-            <p style={{ textAlign: 'justify', lineHeight: '1.7' }}>
+          <div className="testimony-block" style={{ 
+            minHeight: 'auto',
+            display: 'flex',
+            flexDirection: 'column'
+          }}>
+            <p style={{ 
+              textAlign: 'justify', 
+              lineHeight: '1.7',
+              flex: '1',
+              marginBottom: '16px'
+            }}>
               "AWS makes learning feel relevant and future-proof. It's more than just earning a certification; it's about developing the confidence to tackle real-world problems with the right tools."
             </p>
-            <div style={{ textAlign: 'right', marginTop: '16px' }}>
+            <div style={{ textAlign: 'right', marginTop: 'auto' }}>
               <span style={{ fontWeight: 'bold', color: 'var(--primary-blue)' }}>— Karyll Bontuyan</span>
             </div>
           </div>
           
-          <div className="testimony-block">
-            <p style={{ textAlign: 'justify', lineHeight: '1.7' }}>
+          <div className="testimony-block" style={{ 
+            minHeight: 'auto',
+            display: 'flex',
+            flexDirection: 'column'
+          }}>
+            <p style={{ 
+              textAlign: 'justify', 
+              lineHeight: '1.7',
+              flex: '1',
+              marginBottom: '16px'
+            }}>
               "What I like about AWS is how it bridges theory and practice. You're not just imagining how systems work—you actually build and deploy them. That hands-on experience makes all the difference."
             </p>
-            <div style={{ textAlign: 'right', marginTop: '16px' }}>
+            <div style={{ textAlign: 'right', marginTop: 'auto' }}>
               <span style={{ fontWeight: 'bold', color: 'var(--primary-blue)' }}>— Abe Javier</span>
             </div>
           </div>
           
-          <div className="testimony-block">
-            <p style={{ textAlign: 'justify', lineHeight: '1.7' }}>
+          <div className="testimony-block" style={{ 
+            minHeight: 'auto',
+            display: 'flex',
+            flexDirection: 'column'
+          }}>
+            <p style={{ 
+              textAlign: 'justify', 
+              lineHeight: '1.7',
+              flex: '1',
+              marginBottom: '16px'
+            }}>
               "Learning AWS has been a turning point in how I approach technology. Instead of just completing programming assignments, I can now deploy real applications on the cloud, which makes my work feel more meaningful and practical. I realized I could actually build and deploy my own projects just like the professionals. It transformed my confidence as a student. Suddenly, I wasn't just learning theory, I was creating solutions that could scale to millions of users."
             </p>
-            <div style={{ textAlign: 'right', marginTop: '16px' }}>
+            <div style={{ textAlign: 'right', marginTop: 'auto' }}>
               <span style={{ fontWeight: 'bold', color: 'var(--primary-blue)' }}>— Lance Andres</span>
             </div>
           </div>
           
-          <div className="testimony-block">
-            <p style={{ textAlign: 'justify', lineHeight: '1.7' }}>
+          <div className="testimony-block" style={{ 
+            minHeight: 'auto',
+            display: 'flex',
+            flexDirection: 'column'
+          }}>
+            <p style={{ 
+              textAlign: 'justify', 
+              lineHeight: '1.7',
+              flex: '1',
+              marginBottom: '16px'
+            }}>
               "Learning AWS is essential for students because it gives them hands-on experience with cloud tools that power most modern apps and services. It helps them build scalable projects, understand real-world infrastructure, and stay competitive in a tech industry that's rapidly shifting. Learning AWS helped me understand how real-world apps run behind the scenes. As a graduating student, it gave me a serious edge in building cloud-based projects that actually reflect what companies use today."
             </p>
-            <div style={{ textAlign: 'right', marginTop: '16px' }}>
+            <div style={{ textAlign: 'right', marginTop: 'auto' }}>
               <span style={{ fontWeight: 'bold', color: 'var(--primary-blue)' }}>— Hezron Nallos</span>
             </div>
           </div>
@@ -614,12 +713,11 @@ function App() {
 
 
       {/* org-chart*/}
-      {/* Organizational Chart Section */}
       <section id="orgchart" className="org-chart-section" ref={orgChartRef}>
         <h2 className="section-title">Our Organization</h2>
         
         <div className="chart-container">
-          {/* Instructor Level */}
+          {/* instructor */}
           <div className="instructor-level">
             <div className="instructor-card">
               <div className="instructor-name">Clyde Chester R. Balaman</div>
@@ -627,12 +725,20 @@ function App() {
             </div>
           </div>
 
-          {/* Connecting Lines */}
+          {/* connecting-lines */}
           <div className="connection-line vertical-main"></div>
           <div className="connection-line horizontal-officers"></div>
 
-          {/* Officers Level */}
-          <div className="officers-level">
+          {/* officers */}
+          <div className="officers-level" style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+            gap: '2rem',
+            width: '100%',
+            maxWidth: '1200px',
+            position: 'relative',
+            justifyContent: 'center'
+          }}>
             <div className="officer-card">
               <div className="officer-name">Ijed Luzele Yañez</div>
               <div className="officer-role">President</div>
@@ -650,12 +756,12 @@ function App() {
               <div className="officer-role">Secretary</div>
             </div>
             <div className="officer-card">
-              <div className="officer-name">Karylle Grace Bontuyan</div>
+              <div className="officer-name">Karyll Grace Bontuyan</div>
               <div className="officer-role">Treasurer</div>
             </div>
           </div>
 
-          {/* Members Level */}
+          {/* members */}
           <div className="members-level">
             <div className="members-title">Club Members</div>
             <div className="members-grid">
@@ -722,6 +828,10 @@ function App() {
               <div className="member-card">
                 <div className="member-name">John Bernard Mendoza</div>
                 <div className="member-role">QA Tester</div>
+              </div>
+              <div className="member-card">
+                <div className="member-name">Elykah Cascaro</div>
+                <div className="member-role">Content Writer</div>
               </div>
             </div>
           </div>
@@ -918,7 +1028,7 @@ function App() {
             </div>
             
             <div style={{ padding: '24px 0' }}>
-              {/* Event #1 */}
+              {/* event-#1 */}
               <div style={{ 
                 background: 'linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%)',
                 borderRadius: '12px',
@@ -988,7 +1098,7 @@ function App() {
                 </div>
               </div>
 
-              {/* Event #2 */}
+              {/* event-#2 */}
               <div style={{ 
                 background: 'linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%)',
                 borderRadius: '12px',
@@ -1045,7 +1155,7 @@ function App() {
                 </p>
               </div>
               
-              {/* Additional Info */}
+              {/* additional-info */}
               <div style={{
                 background: 'linear-gradient(135deg, rgba(74, 144, 226, 0.05) 0%, rgba(255, 153, 0, 0.05) 100%)',
                 borderRadius: '8px',
@@ -1122,7 +1232,7 @@ function App() {
       </footer>
 
 
-      {/* FAQ Modal */}
+      {/* faq-modal */}
       {showFAQModal && (
         <div className="modal-overlay" onClick={() => setShowFAQModal(false)}>
           <div className="modal-content" style={{ maxWidth: '500px', width: '100%' }} onClick={e => e.stopPropagation()}>
